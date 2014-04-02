@@ -1,0 +1,204 @@
+/*! Eryri Educational Platform - UI Component | v0.2 | (C) Juti Noppornpitak and eryri-web contributors | MIT License */
+
+///// Mixins locally used by this SCSS.
+@mixin __transform($execution) {
+    -webkit-transform: $execution;
+    -moz-transform: $execution;
+    -ms-transform: $execution;
+    -o-transform: $execution;
+    transform: $execution;
+}
+
+@mixin __transition($property, $speed) {
+    -webkit-transition: $property ease $speed;
+    -moz-transition: $property ease $speed;
+    -ms-transition: $property ease $speed;
+    -o-transition: $property ease $speed;
+    transition: $property ease $speed;
+}
+
+@mixin __transition_with_delay($property, $speed, $delay) {
+    -webkit-transition: $property ease $speed;
+    -moz-transition: $property ease $speed;
+    -ms-transition: $property ease $speed;
+    -o-transition: $property ease $speed;
+    transition: $property ease $speed;
+}
+
+$navi_background_color: #111;
+$navi_default_transition_speed: 250ms;
+$navi_width: 280px;
+
+nav.off-canvas {
+    * {
+        cursor: default;
+    }
+
+    a, a * {
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .activator {
+        @include __transition(all, $navi_default_transition_speed);
+        z-index: 1000;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 10px 13px;
+        background-color: #111;
+        color: #fff;
+        border-radius: 150px;
+        border: 2px solid #fff;
+
+        &:hover {
+            background-color: #33B5E5;
+        }
+    }
+
+    .deactivator {
+        z-index: 999;
+        @include __transition(all, $navi_default_transition_speed);
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $navi_background_color;
+        opacity: 0;
+    }
+
+    .menus {
+        @include __transition(all, $navi_default_transition_speed);
+        z-index: 1000;
+        position: fixed;
+        background-color: $navi_background_color;
+        color: #fff;
+        width: $navi_width;
+        padding: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: -$navi_width;
+
+        .brand {
+            position: relative;
+            display: block;
+            background-color: #000;
+            color: #fff;
+            font-weight: 700;
+            padding: 10px 10px 10px 35px;
+        }
+
+        h2 {
+            position: relative;
+            font-size: 14px;
+            color: #333;
+            padding: 10px 10px 10px 35px;
+            margin: 0;
+            font-weight: 200;
+            border-top: 1px solid #222;
+        }
+
+        li {
+            position: relative;
+            padding: 0;
+            margin: 0;
+
+            a {
+                display: block;
+                padding: 10px 10px 10px 35px;
+                color: #999;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                &.active {
+                    background-color: #000;
+                }
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 11px;
+            left: 10px;
+            display: block;
+        }
+
+        .text {
+            display: inline-block;
+        }
+    }
+}
+
+nav.off-canvas.activated {
+    .menus {
+        @include __transform(translateX($navi_width));
+        box-shadow: rgba(0, 0, 0, 0.7) 0 0 10px;
+    }
+
+    .deactivator {
+        display: block;
+        opacity: 0.5;
+    }
+}
+
+.off-canvas-wrapper {
+    .off-canvas-content {
+        @include __transition(all, $navi_default_transition_speed);
+    }
+}
+
+.off-canvas-wrapper.activated {
+    overflow: hidden;
+    overflow-y: auto;
+
+    .off-canvas-content {
+        @include __transform(translateX($navi_width));
+    }
+}
+
+.off-canvas-wrapper.shift-right {
+    nav.off-canvas {
+        .activator {
+            left: auto;
+            right: 10px;
+        }
+
+        .menus {
+            left: auto;
+            right: -$navi_width;
+            bottom: 0;
+            margin-left: 0;
+        }
+
+        &.activated {
+            .menus {
+                @include __transform(translateX(0));
+                right: 0;
+            }
+        }
+    }
+
+    &.activated {
+        overflow: hidden;
+        overflow-y: auto;
+
+        .off-canvas-content {
+            @include __transform(translateX(-$navi_width));
+        }
+    }
+}

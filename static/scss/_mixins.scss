@@ -1,0 +1,31 @@
+@mixin transform($execution) {
+    -webkit-transform: $execution;
+    -moz-transform: $execution;
+    -ms-transform: $execution;
+    -o-transform: $execution;
+    transform: $execution;
+}
+
+@mixin transform-origin($position) {
+    -webkit-transform-origin: $position;
+    -moz-transform-origin: $position;
+    -ms-transform-origin: $position;
+    -o-transform-origin: $position;
+    transform-origin: $position;
+}
+
+@mixin transition($property, $speed) {
+    -webkit-transition: $property ease $speed;
+    -moz-transition: $property ease $speed;
+    -ms-transition: $property ease $speed;
+    -o-transition: $property ease $speed;
+    transition: $property ease $speed;
+}
+
+@mixin transition_with_delay($property, $speed, $delay) {
+    -webkit-transition: $property ease $speed;
+    -moz-transition: $property ease $speed;
+    -ms-transition: $property ease $speed;
+    -o-transition: $property ease $speed;
+    transition: $property ease $speed;
+}
