@@ -2,26 +2,6 @@
 
 $highlightedColor: #23ade4;
 
-// Overriding Navi.scss
-.off-canvas-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.card {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-}
-
 .card.hero {
     background-color: #666;
     left: 30%;

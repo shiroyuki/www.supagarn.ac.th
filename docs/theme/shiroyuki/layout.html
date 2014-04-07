@@ -1,10 +1,8 @@
 {# Local settings #}
-{%- set shorttitle = 'Juti Noppornpitak' %}
 {%- set enable_cdn = False %}
-{%- set enable_template_inspector = False %}
 {%- set enable_google_analytics = False %}
 {%- set use_conventional_titlesuffix = False %}
-{%- set show_sphinx = True %}
+{%- set show_sphinx = False %}
 {%- set render_sidebar = (not embedded)
         and (not theme_nosidebar|tobool)
         and (sidebars != [])
@@ -16,13 +14,13 @@
 {%- if use_conventional_titlesuffix and not embedded and docstitle %}
     {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
 {%- else %}
-  {%- set titlesuffix = " - Juti Noppornpitak" %}
+  {%- set titlesuffix = " - " + project %}
 {%- endif %}
 
 {# Local macros #}
 {%- macro sidebar() %}
       {%- if render_sidebar %}
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar sidebar">
         <div class="sphinxsidebarwrapper">
           {%- block sidebarlogo %}
               {%- if logo %}
@@ -200,58 +198,26 @@
                 </div>
             </nav>
 
-            <header class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        Juti Noppornpitak
-                    </div>
-                </div>
-            </header>
-
             <div class="container">
                 <div class="row">
-                    {% if not theme_nosidebar %}
-                        <aside class="col-sm-2">{{ sidebar() }}</aside>
-                    {% endif %}
+                    <aside class="col-sm-4 col-sm-push-8">
+                        <div class="project">{{ project }}</div>
+                        {% if not theme_nosidebar %}<nav>{{ sidebar() }}</nav>{% endif %}
+                    </aside>
+
                     {# Intentionally open both sides for the content balance. #}
-                    <article class="{% if theme_nosidebar %}col-sm-12{% else %}col-sm-10{% endif %}">
+                    <article class="col-sm-8 col-sm-pull-4">
                         {%- block document %}
                             {% block body %}{% endblock %}
                         {%- endblock %}
-                        {{ footer() }}
                     </article>
+                </div>
+                <div class="row">
+                    {{ footer() }}
                 </div>
             </div>
         </article>
     </div>
-    {% if enable_template_inspector %}
-        <style>
-            #tpl-inspector {
-                z-index: 1000000;
-                position: fixed;
-                padding: 5px 10px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #222;
-                color: #fff;
-                font-weight: 200;
-                opacity: 0.1;
-            }
-
-            #tpl-inspector:hover {
-                opacity: 1;
-            }
-
-            #tpl-inspector p {
-                display: inline-block;
-            }
-        </style>
-        <div id="tpl-inspector">
-            <p>Page Name: <code>{{ pagename }}</code></p>
-            <p>Source Name: <code>{{ sourcename }}</code></p>
-        </div>
-    {% endif %}
     {% if enable_google_analytics %}
         <script type="text/javascript">
             var _gaq = _gaq || [];

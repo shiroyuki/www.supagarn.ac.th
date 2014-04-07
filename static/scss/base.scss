@@ -13,6 +13,14 @@ body {
     ;
 }
 
+blockquote {
+    font-family: 'Merriweather', serif;
+
+    &.lead {
+        font-size: 48px;
+    }
+}
+
 img {
     max-width: 100%;
 }
@@ -30,7 +38,7 @@ footer {
     padding-top: 25px;
     padding-bottom: 15px;
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px dashed #eee;
     color: #999;
 }
 
@@ -38,19 +46,29 @@ footer {
     position: relative;
 }
 
+.off-canvas-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /***** Responsive Design *****/
 @media (min-width: 970px) {
-    .off-canvas-content div.cover {
-        height: 545px;
-    }
-
-    .off-canvas-content div.cover + .container {
-        padding-top: 565px;
-    }
 }
 
 @media (max-width: 768px) {
-    h1 {
-        margin-top: 80px;
-    }
 }

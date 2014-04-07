@@ -1,8 +1,11 @@
+.table.field-list {
+    width: auto;
+}
+
 .related .breadcrumb {
     padding-left: 0;
     padding-right: 0;
     background-color: transparent;
-    border-bottom: 3px solid #000;
     border-radius: 0;
 }
 

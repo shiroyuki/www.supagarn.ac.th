@@ -46,8 +46,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Shiroyuki Studio'
-copyright = u'2014, Juti Noppornpitak'
+project = u'Supagarn School of Music'
+copyright = u'2014, Supagarn School of Music, Bangkok, Thailand'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -106,7 +106,9 @@ html_theme = 'shiroyuki'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    'nosidebar': False,
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = ['../theme']
@@ -146,7 +148,9 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+  '**': ['searchbox.html', 'localtoc.html']
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -179,7 +183,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ShiroyukiStudiodoc'
+htmlhelp_basename = 'SupagarnDoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -199,7 +203,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ShiroyukiStudio.tex', u'Shiroyuki Studio Documentation',
+  ('index', 'Supagarn.tex', u'Supagarn School of Music',
    u'Juti Noppornpitak', 'manual'),
 ]
 
