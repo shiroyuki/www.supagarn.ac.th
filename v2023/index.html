@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+    <title>โรงเรียนดนตรีศุภการ - ประทีปแห่งดนตรีศึกษาและดนตรีอาชีพ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        /**
+         * Material Color Pallete - Light Blue 500
+         * - Primary: #03a9f4
+         * - Dark: #007ac1
+         * - Light: #67daff
+         */
+        /* Uncomment for checking layout design only */
+        /* * {
+            background-color: rgba(255, 0, 0, 0.1);
+        } */
+
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: #215498;
+        }
+
+        a:visited {
+            color: #215498;
+        }
+
+        body {
+            /* font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 16px;
+
+            display: flex;
+            flex-direction: column;
+            color: #555555;
+
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            color: #000;
+        }
+
+        #identity {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo img {
+            display: block;
+            height: 64px;
+            border: 8px solid #67daff;
+            margin-right: 8px;
+            border-radius: 64px;
+            overflow: hidden;
+            background-color: #67daff;
+        }
+
+        #school-name {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        #contact a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background-color: #007ac1;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            border-radius: 0.5rem;
+            opacity: 0.75
+            box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 20px;
+            transition: all 250ms linear;
+        }
+
+        #contact a span {
+            margin-left: 4px;
+        }
+
+        #contact a:hover {
+            background-color: #67daff;
+            color: #000;
+        }
+
+        #articles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        article {
+            margin: auto;
+            max-width: 720px;
+            padding: 24px;
+        }
+
+        article h1 {
+            color: #000;
+            font-size: 1.5rem;
+        }
+
+        article#intro {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        article#courses tel {
+            font-weight: 700;
+            /* color: #000; */
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 250ms linear;
+        }
+
+        article#courses tel:hover {
+            background-color: #67daff;
+            color: #000;
+        }
+
+        #course-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+        }
+
+        #course-group .courses {
+            padding: 16px;
+            background-color: #eee;
+            margin-left: 8px;
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        #course-group .courses h2 {
+            color: #000;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #course-group .courses ul {
+            border-top: 1px solid #ddd;
+        }
+
+        #course-group .courses li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #course-group .courses:first-child {
+            margin-left: 0;
+        }
+
+        article#map {
+            padding: 0;
+            max-width: none;
+            width: 100vw;
+        }
+
+        article#map iframe {
+            width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            #identity {
+                order: 1;
+            }
+
+            #contact {
+                order: 0;
+                width: 100vw;
+                margin: -24px -24px 48px -24px;
+            }
+
+            #contact a {
+                justify-content: flex-end;
+                padding: 0.5rem 1rem;
+                border-radius: 0;
+            }
+
+            article#intro {
+                font-size: 1.25rem;
+            }
+
+            #course-group {
+                flex-direction: column;
+            }
+
+            #course-group .courses {
+                padding: 16px;
+                background-color: #eee;
+                margin-top: 8px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="identity">
+            <div id="logo"><img src="supagarn-logo.png"/></div>
+            <div id="school-name">โรงเรียนดนตรีศุภการ</div>
+        </div>
+        <div id="contact">
+            <a href="https://www.facebook.com/supagarn.school" target="_blank">
+                ติดต่อโรงเรียน
+                <span class="material-symbols-rounded">
+                    arrow_forward_ios
+                </span>
+            </a>
+        </div>
+    </header>
+    <div id="articles">
+        <article id="intro">
+            โรงเรียนดนตรีศุภการ ก่อตั้งเมื่อวันที่ 5 มีนาคม พ.ศ. 2526 ในความควบคุม และได้รับการรับรองจากกระทรวงศึกษาธิการ
+
+            โรงเรียนดนตรีศุภการได้ให้การศึกษาวิชาดนตรีทั้งภาคปฏิบัติ และภาคทฤษฎี โดยบุคลากรที่มีความรู้ความสามารถ และประสบการณ์ทางดนตรีแก่นักเรียน นิสิตนักศึกษา และบุคคนทั่วไปกว่า 10,000 คน
+        </article>
+        <article id="courses">
+            <h1>วิชาที่เปิดสอน</h1>
+
+            <p>โรงเรียนดนตรีศุภการอยู่ท่ามกลางสิ่งแวดล้อมที่เอื้อแก่การศึกษา ใกล้สถานศึกษากว่า 10 แห่ง หอสมุดแห่งชาติ กระทรวงศึกษาธิการ สถานที่สำคัญทางประวัติศาสตร์และวัฒนธรรม ร่มรื่นด้วยแมกไม้เขียวชอุ่ม อบอุ่นด้วยความสงบ</p>
+
+            <div id="course-group">
+                <div id="theoretical" class="courses">
+                    <h2>ภาคปฏิบัติ</h2>
+                    <ul>
+                        <li>Piano</li>
+                        <li>Guitar</li>
+                        <li>Bass</li>
+                        <li>Drums</li>
+                        <li>Violin</li>
+                        <li>Singing</li>
+                        <li>Stylized playing: Classical, Jazz, Pop, Blues, Rock, ...</li>
+                    </ul>
+                </div>
+
+                <div id="practical" class="courses">
+                    <h2>ภาคทฤษฏี</h2>
+                    <ul>
+                        <li>Pop/Jazz Harmony</li>
+                        <li>Traditional/Modern Harmony</li>
+                        <li>Arranging/Composition</li>
+                        <li>Ear training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                หากสนใจหรืออยากสอบถามข้อมูลเพิ่มเติม ติดต่อเราได้ทาง <a href="https://www.facebook.com/supagarn.school" target="_blank">Facebook</a> หรือโทรมาที่ <tel>02-668-8861-2</tel>
+            </p>
+        </article>
+        <article id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.077989780191!2d100.50630059999996!3d13.774170259415056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299676838ab93%3A0xddb2d590f7c46c51!2zNTE1IOC4quC4suC4oeC5gOC4quC4mSBLaHdhZW5nIFdhY2hpcmEgUGhheWFiYW4sIEtoZXQgRHVzaXQsIEtydW5nIFRoZXAgTWFoYSBOYWtob24gMTAzMDAsIFRoYWlsYW5k!5e0!3m2!1sen!2sca!4v1435471793086" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </article>
+    </div>
+    <footer>
+        <p>โรงเรียนดนตรีศุภการ 515 ถนนสามเสน แขวงวชิรพยาบาล เขตดุสิต กรุงเทพฯ</p>
+        <p id="maker">Made by <a href="https://www.shiroyuki.com">Juti Noppornpitak</a></p>
+    </footer>
+</body>
+</html>
